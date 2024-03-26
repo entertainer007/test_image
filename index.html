@@ -90,6 +90,15 @@
         <img src="나의 정보 아이콘5.png" alt="" width="100%">
     </div>
 </div>
+    <script>
+      (function(){
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
 
 </body>
 </html>
